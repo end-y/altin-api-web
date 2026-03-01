@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Outer coin ring -->
+  <circle cx="16" cy="16" r="15" fill="#F59E0B"/>
+  <circle cx="16" cy="16" r="13" fill="#FBBF24"/>
+  <!-- Inner ring detail -->
+  <circle cx="16" cy="16" r="11" fill="none" stroke="#D97706" stroke-width="0.75"/>
+  <!-- Au text -->
+  <text x="16" y="20.5" font-family="Georgia, serif" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle">Au</text>
+</svg>
