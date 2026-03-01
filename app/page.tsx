@@ -1,16 +1,9 @@
-import { fetchPrices, type PriceSnapshot } from "@/lib/prices";
-import PriceGrid from "@/components/PriceGrid";
+import { Suspense } from "react";
+import PriceGridServer from "@/components/PriceGridServer";
+import PriceGridSkeleton from "@/components/PriceGridSkeleton";
 import ApiDocs from "@/components/ApiDocs";
 
-export default async function Home() {
-  let snapshots: PriceSnapshot[] = [];
-  try {
-    const result = await fetchPrices();
-    snapshots = result.data ?? [];
-  } catch {
-    // Go servisi erişilemez durumdaysa boş göster
-  }
-
+export default function Home() {
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Navbar */}
@@ -68,7 +61,9 @@ export default async function Home() {
       </header>
 
       {/* Live Prices */}
-      <PriceGrid initial={snapshots} />
+      <Suspense fallback={<PriceGridSkeleton />}>
+        <PriceGridServer />
+      </Suspense>
 
       {/* API Docs */}
       <ApiDocs />
