@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   title: "altinapi.online — Türkiye Altın Fiyatları API",
   description:
     "Türkiye'deki altın, gümüş ve döviz fiyatlarını anlık takip eden REST API. Güvenli, hızlı ve kolay entegrasyon.",
+  robots: { index: false, follow: false },
   openGraph: {
     title: "altinapi.online",
     description: "Türkiye altın ve döviz fiyatları API",
