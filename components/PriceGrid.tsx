@@ -1,7 +1,9 @@
-import type { PriceSnapshot } from "@/lib/prices";
+import { sortSnapshots, type PriceSnapshot } from "@/lib/prices";
 import PriceCard from "./PriceCard";
 
 export default function PriceGrid({ initial }: { initial: PriceSnapshot[] }) {
+  const sorted = sortSnapshots(initial);
+
   return (
     <section id="prices" className="py-16 px-4 max-w-6xl mx-auto">
       <div className="mb-8">
@@ -9,7 +11,7 @@ export default function PriceGrid({ initial }: { initial: PriceSnapshot[] }) {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {initial.map((s) => (
+        {sorted.map((s) => (
           <PriceCard key={s.id} snapshot={s} />
         ))}
       </div>

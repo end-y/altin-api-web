@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { usePrices } from "@/lib/PricesContext";
+import { sortSnapshots } from "@/lib/prices";
 
 function fmt(val: number, currency: string) {
   return new Intl.NumberFormat("tr-TR", {
@@ -19,7 +20,7 @@ export default function HesaplaPage() {
   const [qty, setQty] = useState("1");
 
   const okBanks = useMemo(
-    () => snapshots.filter((s) => s.status === "ok" && s.items.length > 0),
+    () => sortSnapshots(snapshots.filter((s) => s.status === "ok" && s.items.length > 0)),
     [snapshots]
   );
 

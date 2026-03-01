@@ -19,6 +19,26 @@ export interface PricesResponse {
   data: PriceSnapshot[];
 }
 
+// Öncelikli sıralama — listedekiler önce, geri kalanlar API sırasında
+const SOURCE_ORDER = [
+  "yapi-kredi",
+  "teb",
+  "hsbc",
+  "ziraat",
+  "tcmb",
+];
+
+export function sortSnapshots(snapshots: PriceSnapshot[]): PriceSnapshot[] {
+  return [...snapshots].sort((a, b) => {
+    const ai = SOURCE_ORDER.indexOf(a.id);
+    const bi = SOURCE_ORDER.indexOf(b.id);
+    if (ai !== -1 && bi !== -1) return ai - bi;
+    if (ai !== -1) return -1;
+    if (bi !== -1) return 1;
+    return 0;
+  });
+}
+
 export async function fetchPrices(): Promise<PricesResponse> {
   const res = await fetch(`${process.env.GO_API_URL}/prices`, {
     headers: { "X-API-Key": process.env.GO_API_KEY! },
