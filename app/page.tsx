@@ -5,36 +5,7 @@ import ApiDocs from "@/components/ApiDocs";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-900">
-      {/* Navbar */}
-      <nav className="border-b border-slate-800 px-4 py-3">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <a
-            href="/"
-            className="text-amber-400 font-bold text-sm tracking-tight"
-          >
-            altinapi<span className="text-slate-400">.online</span>
-          </a>
-          <div className="flex items-center gap-4 text-xs text-slate-400">
-            <a
-              href="#prices"
-              className="hover:text-slate-200 transition-colors"
-            >
-              Fiyatlar
-            </a>
-            <a href="#docs" className="hover:text-slate-200 transition-colors">
-              API Docs
-            </a>
-            <a
-              href="#contact"
-              className="hover:text-slate-200 transition-colors"
-            >
-              İletişim
-            </a>
-          </div>
-        </div>
-      </nav>
-
+    <div className="min-h-screen">
       {/* Hero */}
       <header className="py-20 px-4 text-center max-w-2xl mx-auto">
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 mb-4 leading-tight">
@@ -55,12 +26,12 @@ export default function Home() {
             href="#prices"
             className="bg-slate-800 hover:bg-slate-700 text-slate-200 px-5 py-2.5 rounded-lg text-sm transition-colors border border-slate-700"
           >
-            Örnek Fiyatlar ↓
+            Fiyatlar ↓
           </a>
         </div>
       </header>
 
-      {/* Live Prices */}
+      {/* Prices */}
       <Suspense fallback={<PriceGridSkeleton />}>
         <PriceGridServer />
       </Suspense>
@@ -68,9 +39,27 @@ export default function Home() {
       {/* API Docs */}
       <ApiDocs />
 
-      {/* Contact */}
-      {/* Disclaimer */}
-      <section className="py-12 px-4 max-w-4xl mx-auto">
+      {/* Alt bölümler */}
+      <div className="py-12 px-4 max-w-4xl mx-auto space-y-4">
+        {/* İletişim */}
+        <div
+          id="contact"
+          className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 space-y-4"
+        >
+          <p className="font-semibold text-slate-300 text-sm">İletişim</p>
+          <p className="text-xs text-slate-400 leading-relaxed">
+            API anahtarı talebi, hata bildirimi ve diğer konular için bize
+            ulaşın.
+          </p>
+          <a
+            href="mailto:contact@altinapi.com"
+            className="inline-flex items-center gap-2 bg-slate-800 border border-slate-600 hover:border-amber-400/50 text-slate-200 hover:text-amber-400 px-4 py-2.5 rounded-lg text-sm transition-colors"
+          >
+            contact@altinapi.com
+          </a>
+        </div>
+
+        {/* Sorumluluk Reddi */}
         <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 text-xs text-slate-400 leading-relaxed space-y-3">
           <p className="font-semibold text-slate-300 text-sm">
             Sorumluluk Reddi Beyanı
@@ -97,20 +86,7 @@ export default function Home() {
             veya dolaylı zararlardan platform sahibi sorumlu tutulamaz.
           </p>
         </div>
-      </section>
-      <section id="contact" className="py-16 px-4 max-w-4xl mx-auto">
-        <h2 className="text-xl font-bold text-slate-100 mb-2">İletişim</h2>
-        <p className="text-slate-400 text-sm mb-6">
-          API anahtarı talebi, hata bildirimi ve diğer talepler için bize
-          ulaşın.
-        </p>
-        <a
-          href="mailto:contact@altinapi.com"
-          className="inline-flex items-center gap-2 bg-slate-800 border border-slate-700 hover:border-amber-400/50 text-slate-200 hover:text-amber-400 px-5 py-3 rounded-lg text-sm transition-colors"
-        >
-          contact@altinapi.com
-        </a>
-      </section>
+      </div>
 
       {/* Footer */}
       <footer className="border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-600">
