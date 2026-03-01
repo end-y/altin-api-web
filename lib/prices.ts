@@ -20,13 +20,7 @@ export interface PricesResponse {
 }
 
 // Öncelikli sıralama — listedekiler önce, geri kalanlar API sırasında
-const SOURCE_ORDER = [
-  "yapi-kredi",
-  "teb",
-  "hsbc",
-  "ziraat",
-  "tcmb",
-];
+const SOURCE_ORDER = ["hsbc", "yapi-kredi", "teb", "ziraat", "tcmb"];
 
 export function sortSnapshots(snapshots: PriceSnapshot[]): PriceSnapshot[] {
   return [...snapshots].sort((a, b) => {
