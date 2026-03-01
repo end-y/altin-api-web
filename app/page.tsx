@@ -83,7 +83,7 @@ export default async function Home() {
           API anahtarı talebi, hata bildirimi için bize ulaşın.
         </p>
         <a
-          href="mailto:contact@altin-api.com"
+          href="mailto:contact@altinapi.com"
           className="inline-flex items-center gap-2 bg-slate-800 border border-slate-700 hover:border-amber-400/50 text-slate-200 hover:text-amber-400 px-5 py-3 rounded-lg text-sm transition-colors"
         >
           contact@altinapi.com
