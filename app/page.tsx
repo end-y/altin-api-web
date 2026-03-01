@@ -16,12 +16,28 @@ export default async function Home() {
       {/* Navbar */}
       <nav className="border-b border-slate-800 px-4 py-3">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <a href="/" className="text-amber-400 font-bold text-sm tracking-tight">
+          <a
+            href="/"
+            className="text-amber-400 font-bold text-sm tracking-tight"
+          >
             altinapi<span className="text-slate-400">.online</span>
           </a>
           <div className="flex items-center gap-4 text-xs text-slate-400">
-            <a href="#prices" className="hover:text-slate-200 transition-colors">Fiyatlar</a>
-            <a href="#docs" className="hover:text-slate-200 transition-colors">API Docs</a>
+            <a
+              href="#prices"
+              className="hover:text-slate-200 transition-colors"
+            >
+              Fiyatlar
+            </a>
+            <a href="#docs" className="hover:text-slate-200 transition-colors">
+              API Docs
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-slate-200 transition-colors"
+            >
+              İletişim
+            </a>
           </div>
         </div>
       </nav>
@@ -59,6 +75,20 @@ export default async function Home() {
 
       {/* API Docs */}
       <ApiDocs />
+
+      {/* Contact */}
+      <section id="contact" className="py-16 px-4 max-w-4xl mx-auto">
+        <h2 className="text-xl font-bold text-slate-100 mb-2">İletişim</h2>
+        <p className="text-slate-400 text-sm mb-6">
+          API anahtarı talebi, hata bildirimi için bize ulaşın.
+        </p>
+        <a
+          href="mailto:contact@altin-api.com"
+          className="inline-flex items-center gap-2 bg-slate-800 border border-slate-700 hover:border-amber-400/50 text-slate-200 hover:text-amber-400 px-5 py-3 rounded-lg text-sm transition-colors"
+        >
+          contact@altinapi.com
+        </a>
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-600">

@@ -1,4 +1,5 @@
 import type { PriceSnapshot } from "@/lib/prices";
+import LocalTime from "./LocalTime";
 
 function fmt(val: number | undefined, currency: string) {
   if (val == null) return "—";
@@ -11,19 +12,14 @@ function fmt(val: number | undefined, currency: string) {
 }
 
 export default function PriceCard({ snapshot }: { snapshot: PriceSnapshot }) {
-  const ts = snapshot.fetched_at
-    ? new Date(snapshot.fetched_at).toLocaleTimeString("tr-TR", {
-        hour: "2-digit",
-        minute: "2-digit",
-      })
-    : null;
-
   return (
     <div className="bg-slate-800 rounded-xl p-5 flex flex-col gap-3 border border-slate-700">
       <div className="flex items-center justify-between">
         <h3 className="font-semibold text-slate-100 text-sm">{snapshot.source}</h3>
-        {ts && (
-          <span className="text-xs text-slate-500">{ts}</span>
+        {snapshot.fetched_at && (
+          <span className="text-xs text-slate-500">
+            <LocalTime iso={snapshot.fetched_at} />
+          </span>
         )}
       </div>
 
