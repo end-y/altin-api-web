@@ -44,9 +44,6 @@ export default async function Home() {
 
       {/* Hero */}
       <header className="py-20 px-4 text-center max-w-2xl mx-auto">
-        <div className="inline-block bg-amber-400/10 text-amber-400 text-xs font-medium px-3 py-1 rounded-full mb-6">
-          REST API · JSON · X-API-Key
-        </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-100 mb-4 leading-tight">
           Türkiye&apos;nin Altın Fiyatları API&apos;si
         </h1>
