@@ -69,10 +69,40 @@ export default function Home() {
       <ApiDocs />
 
       {/* Contact */}
+      {/* Disclaimer */}
+      <section className="py-12 px-4 max-w-4xl mx-auto">
+        <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 text-xs text-slate-400 leading-relaxed space-y-3">
+          <p className="font-semibold text-slate-300 text-sm">
+            Sorumluluk Reddi Beyanı
+          </p>
+          <p>
+            Bu platform, kişisel bir hobi projesidir. Herhangi bir ticari gelir
+            beklentisi veya amacı bulunmamaktadır. Sunulan veriler; bankaların
+            ve finans kuruluşlarının kamuya açık web sitelerinden otomatik
+            olarak derlenmekte olup bu kuruluşlarla herhangi bir resmi
+            bağlantımız yoktur.
+          </p>
+          <p>
+            Buradaki fiyat bilgileri{" "}
+            <strong className="text-slate-300">
+              yalnızca bilgilendirme amaçlıdır
+            </strong>{" "}
+            ve yatırım tavsiyesi niteliği taşımaz. Verilerin doğruluğu,
+            güncelliği veya eksiksizliği garanti edilmez. Finansal kararlarınızı
+            vermeden önce ilgili kuruluşların resmi kanallarını ve lisanslı
+            yatırım danışmanlarını esas almanızı öneririz.
+          </p>
+          <p>
+            Bu platforma dayanılarak alınan kararlardan doğabilecek doğrudan
+            veya dolaylı zararlardan platform sahibi sorumlu tutulamaz.
+          </p>
+        </div>
+      </section>
       <section id="contact" className="py-16 px-4 max-w-4xl mx-auto">
         <h2 className="text-xl font-bold text-slate-100 mb-2">İletişim</h2>
         <p className="text-slate-400 text-sm mb-6">
-          API anahtarı talebi, hata bildirimi için bize ulaşın.
+          API anahtarı talebi, hata bildirimi ve diğer talepler için bize
+          ulaşın.
         </p>
         <a
           href="mailto:contact@altinapi.com"
@@ -82,32 +112,12 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Disclaimer */}
-      <section className="py-12 px-4 max-w-4xl mx-auto">
-        <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 text-xs text-slate-400 leading-relaxed space-y-3">
-          <p className="font-semibold text-slate-300 text-sm">Sorumluluk Reddi Beyanı</p>
-          <p>
-            Bu platform, kişisel bir hobi projesidir. Herhangi bir ticari gelir beklentisi veya amacı
-            bulunmamaktadır. Sunulan veriler; bankaların ve finans kuruluşlarının kamuya açık web
-            sitelerinden otomatik olarak derlenmekte olup bu kuruluşlarla herhangi bir resmi bağlantımız
-            yoktur.
-          </p>
-          <p>
-            Buradaki fiyat bilgileri <strong className="text-slate-300">yalnızca bilgilendirme amaçlıdır</strong> ve
-            yatırım tavsiyesi niteliği taşımaz. Verilerin doğruluğu, güncelliği veya eksiksizliği
-            garanti edilmez. Finansal kararlarınızı vermeden önce ilgili kuruluşların resmi kanallarını
-            ve lisanslı yatırım danışmanlarını esas almanızı öneririz.
-          </p>
-          <p>
-            Bu platforma dayanılarak alınan kararlardan doğabilecek doğrudan veya dolaylı zararlardan
-            platform sahibi sorumlu tutulamaz.
-          </p>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-600">
-        <p>altinapi.online &mdash; Kişisel proje · Ticari amaç taşımaz · Veri yalnızca bilgilendirme amaçlıdır.</p>
+        <p>
+          altinapi.online &mdash; Kişisel proje · Ticari amaç taşımaz · Veri
+          yalnızca bilgilendirme amaçlıdır.
+        </p>
       </footer>
     </div>
   );
