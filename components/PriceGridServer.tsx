@@ -1,8 +1,8 @@
-import { fetchPrices } from "@/lib/prices";
+import { fetchPrices, type PriceSnapshot } from "@/lib/prices";
 import PriceGrid from "./PriceGrid";
 
 export default async function PriceGridServer() {
-  let snapshots = [];
+  let snapshots: PriceSnapshot[] = [];
   try {
     const result = await fetchPrices();
     snapshots = result.data ?? [];
