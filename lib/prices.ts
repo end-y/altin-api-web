@@ -23,6 +23,7 @@ export async function fetchPrices(): Promise<PricesResponse> {
   const res = await fetch(`${process.env.GO_API_URL}/prices`, {
     headers: { "X-API-Key": process.env.GO_API_KEY! },
     next: { revalidate: 30 },
+    signal: AbortSignal.timeout(8000),
   });
 
   if (!res.ok) {
